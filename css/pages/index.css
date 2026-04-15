@@ -1,0 +1,158 @@
+body {
+  display: flex; 
+  flex-direction: column;  /* tudo fica um embaixo do outro (form + footer) */
+  height: 100vh;  /* ocupa exatamente a altura da tela */
+  overflow: hidden;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url('../../img/index/capa-inicial.png');
+  /* coloquei um fundo com imagem + um degradê escuro por cima pra dar contraste */
+  background-size: cover; 
+  background-position: center; 
+  /* centraliza a imagem no meio da tela */
+}
+
+.login-form {
+  flex: 1; 
+  /* faz o form ocupar todo espaço disponível */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* centralizei tudo no meio da tela */
+
+  padding: 10px;
+  /* dei um respiro nas bordas */
+
+  overflow: hidden;
+  /* evita que o conteúdo estoure e empurre o footer */
+}
+
+.login-box {
+  background: rgba(0, 0, 0, 0.7); 
+  /* fundo escuro transparente */
+
+  backdrop-filter: blur(10px); 
+  /* efeito vidro (glass) */
+
+  border: 2px solid #00ffcc; 
+  /* borda neon */
+
+  box-shadow: 0 0 25px #00ffcc; 
+  /* brilho em volta (glow) */
+
+  padding: 20px;
+  border-radius: 15px;
+  /* cantos arredondados pra ficar mais bonito */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* organizei tudo em coluna e centralizado */
+
+  overflow: auto;
+  /* se ficar grande demais, scroll acontece só dentro da box */
+}
+
+.login__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* alinhei logo + título no centro */
+
+  margin-bottom: 20px;
+  /* espaço abaixo */
+}
+
+/* LOGO */
+.login__header img {
+  width: 180px;
+  /* defini um tamanho padrão pras imagens */
+}
+
+/* TÍTULO */
+.login__header h1 {
+  color: #b2df28;
+  /* verde estilo Rick and Morty */
+
+  font-size: 1.5em;
+
+  letter-spacing: 2px;
+  /* dei um espacinho entre letras */
+
+  text-shadow: 0 0 10px #00ffcc;
+  /* glow no texto */
+}
+
+/* SUBTÍTULO */
+.subtitle {
+  color: #00ffcc;
+  /* azul neon */
+
+  font-size: 0.6em;
+  /* menorzinho pra não roubar atenção */
+
+  margin-top: 10px;
+}
+
+/* ===== INPUT ===== */
+.login__input {
+  width: 100%;
+  max-width: 250px;
+  /* limitei o tamanho pra não ficar gigante */
+
+  padding: 12px;
+  margin-bottom: 15px;
+
+  border: 2px solid #00b5cc;
+  border-radius: 8px;
+
+  background: rgba(0,0,0,0.8);
+  /* fundo escuro */
+
+  color: #fff;
+  /* texto branco */
+
+  text-align: center;
+  /* centralizei o texto digitado */
+}
+
+/* FOCO */
+.login__input:focus {
+  border-color: #b2df28;
+  /* muda a cor quando clica */
+
+  box-shadow: 0 0 10px #00ffcc;
+  /* glowzinho bonito */
+}
+
+.login__button {
+  width: 100%;
+  max-width: 250px;
+
+  padding: 12px;
+
+  background-color: #00b5cc;
+  /* azul principal */
+
+  border: 2px solid #b2df28;
+  /* detalhe verde */
+
+  border-radius: 8px;
+
+  color: #fff;
+
+  cursor: pointer;
+  /* mãozinha */
+
+  transition: 0.3s;
+  /* animação suave */
+}
+
+.login__button:hover {
+  transform: scale(1.05);
+  /* cresce um pouquinho */
+
+  box-shadow: 0 0 15px #00ffcc;
+  /* glow mais forte no hover */
+}

@@ -1,0 +1,16 @@
+/* Importa fonte estilo retrô (videogame) do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ===== RESET GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Remove bordas padrão de inputs e botões */
+button, input {
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,102 @@
+footer {
+  width: 100%;/* Ocupa toda largura da tela */
+  border-top: 1px solid #00ffcc;/* Linha neon topo */
+  display: flex;/* Ativa flexbox */
+  flex-direction: column;/* Organiza elementos em coluna */
+  align-items: center;/* Centraliza horizontalmente */
+  animation: neonPulse 2s infinite alternate;/* Aplica animação de brilho  */
+  padding: 5px 0;
+  flex-shrink: 0;
+ 
+  
+}
+.footerContainer {
+  padding: 5px 0; /* Espaçamento vertical */
+ 
+}
+.socialIcons {
+  display: flex;/* Layout em linha */
+  gap: 15px;/* Espaço entre os ícones  */
+  
+}
+
+/* ===== BOTÃO DOS ÍCONES ===== */
+.socialIcons a {
+  width: 40px;  /* Largura fixa */
+  height: 40px;  /* Altura fixa  */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;  /* Deixa formato circular */
+  border: 1px solid #00ffcc;  /* Borda neon */
+  transition: 0.3s; /* Animação suave em hover */
+  box-shadow: 0 0 5px #00ffcc; /* Glow inicial leve */
+ 
+}
+
+/* ===== ÍCONE INTERNO ===== */
+.socialIcons a i {
+  font-size: 1.4em;  /* Tamanho do ícone */
+  color: #00ffcc;
+  transition: 0.3s;  /* Suaviza mudança de cor */
+ 
+}
+
+/* ===== HOVER NOS ÍCONES ===== */
+.socialIcons a:hover {
+  transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+  
+
+  box-shadow:
+    0 0 10px #00ffcc,
+    0 0 20px #00ffcc,
+    0 0 30px #00ffcc;
+  /* Glow forte em camadas (efeito neon real) */
+}
+
+.socialIcons a:hover i {
+  color: white;  /* fundo  */
+ 
+}
+
+.footerBottom {
+  width: 100%;
+  padding: 5px;
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(0,255,204,0.2); /* Linha   */
+  
+}
+
+.footerBottom img {
+  width: 200px; /* tamanho da logo  */
+  margin-bottom: -20px; /* espaço entre logo e texto */
+  animation: float 3s ease-in-out infinite;/* Animação flutuando */
+  
+}
+
+.footerBottom p {
+  font-size: 0.6em;
+  text-align: center;
+  color: #00ffcc;
+  line-height: 1.5; /* espaço entre linhas */
+}
+
+.footerBottom .designer {
+  color: #b2df28;
+ 
+}
+
+/* ===== ANIMAÇÃO DE FLUTUAÇÃO ===== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+    /* posição normal */
+  }
+  50% {
+    transform: translateY(-5px);
+    /* sobe levemente */
+  }
+}
