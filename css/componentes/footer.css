@@ -5,8 +5,11 @@ footer {
   flex-direction: column;/* Organiza elementos em coluna */
   align-items: center;/* Centraliza horizontalmente */
   animation: neonPulse 2s infinite alternate;/* Aplica animação de brilho  */
-  padding: 5px 0;
   flex-shrink: 0;
+  margin-top: auto;
+  padding: 10px 0;
+  background: rgba(0,0,0,0.7);
+  
  
   
 }

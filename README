@@ -1,0 +1,83 @@
+# 🧠 Jogo da Memória - Rick and Morty Edition
+
+Um jogo da memória interativo desenvolvido com foco em **prática de lógica, manipulação de DOM e UI estilizada**, utilizando HTML, CSS e JavaScript.
+
+Projeto com temática inspirada em Rick and Morty 🧪🌀 (sem fins comerciais).
+
+
+## 💼 Projeto para portfólio
+
+Este projeto foi desenvolvido como parte dos meus estudos em desenvolvimento front-end, com foco em prática de lógica, UI e organização de código.
+---
+
+## 🎮 Demonstração
+
+🔗 Acesse o projeto:  
+👉 https://carolinagarcez.github.io/portfolio/ 
+
+---
+
+## ✨ Funcionalidades
+
+- 🃏 Sistema de cartas com efeito flip (3D)
+- ⏱ Timer de tempo de jogo
+- 🔄 Botão de reinício
+- 🎯 Detecção de pares corretos
+- 🎨 Interface estilo game com efeito neon
+- 📱 Layout responsivo 
+
+---
+
+## 🛠 Tecnologias utilizadas
+
+- HTML5
+- CSS3 (Flexbox + Grid + animações)
+- JavaScript (DOM, eventos e lógica do jogo)
+
+---
+
+## 🎨 Design
+
+O layout foi pensado para simular uma interface de jogo, com:
+
+- Estilo neon/cyber
+- Hierarquia visual focada no tabuleiro
+- Efeitos de hover e glow
+- Cartas com proporção fixa e animação 3D
+
+---
+
+## 🧠 Aprendizados
+
+Durante o desenvolvimento, pratiquei:
+
+- Organização de layout com **Flexbox e Grid**
+- Controle de responsividade com **vh e proporções**
+- Manipulação de classes via JavaScript
+- Estruturação de projeto (HTML, CSS e JS separados)
+- Criação de interfaces com foco em experiência do usuário
+
+---
+
+## 🚀 Melhorias futuras
+
+- 🔊 Adicionar efeitos sonoros (flip e acerto)
+- 🎬 Animação de entrada das cartas
+- 🏆 Sistema de pontuação/ranking
+- 📊 Níveis de dificuldade
+- 💾 Salvamento de progresso
+
+---
+
+## ⚠️ Aviso
+
+Este projeto é apenas para fins educacionais.  
+Rick and Morty™ e seus elementos visuais pertencem aos seus criadores.
+
+---
+
+## 👩‍💻 Desenvolvido por
+
+**Carolina Garcez** 💙  
+🔗 https://www.linkedin.com/in/carolinagarcez  
+🔗 https://github.com/CarolinaGarcez

@@ -1,173 +1,266 @@
-body {
-  display: flex; 
-  flex-direction: column;  /* tudo fica um embaixo do outro (form + footer) */
-  height: 100vh;  /* ocupa exatamente a altura da tela */
-  overflow: hidden;
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url('../../img/game/capa-game.png');
-  /* coloquei um fundo com imagem + um degradê escuro por cima pra dar contraste */
-  background-size: cover; 
-  background-position: center; 
-  /* centraliza a imagem no meio da tela */
-}
-main {
-  display: flex;
-  flex-direction: column; /* Organiza os elementos em coluna */
-  width: 100%; /* Ocupa toda a largura da tela */
 
-  min-height: 100vh;  /* altura min */
-  align-items: center;/* Centraliza horizontalmente */
-  justify-content: center;/* Centraliza verticalmente */
-  padding: 20px 20px 50px; /* Espaçamento interno (topo, lados, baixo) */
+body {
+  margin: 0; /* tiro a margem padrão do navegador pra não dar espaçamento estranho */
+  display: flex;/* uso flex em coluna porque meu layout é vertical  */
+  flex-direction: column;
+  min-height: 100vh;/* garante que ocupa a tela inteira */
+  
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+    url('../../img/game/capa-game.png'); /* fundo com imagem + camada escura por cima pra dar contraste */
+
+  /* faz a imagem cobrir toda a tela */
+  background-size: cover;
+
+  /* centraliza a imagem */
+  background-position: center;
+
+  /* fonte simples por enquanto */
+  font-family: sans-serif;
+}
+
+/* =========================
+    ÁREA PRINCIPAL
+   ========================= */
+
+main {
+  /* faz o conteúdo ocupar o espaço disponível */
+  flex: 1;
+
+  /* organização em coluna */
+  display: flex;
+  flex-direction: column;
+
+  /* centraliza tudo horizontalmente */
+  align-items: center;
+
+  /* distribui bem os elementos na tela (sem ficar tudo colado) */
+  justify-content: space-evenly;
+
+  /* padding menor pra caber tudo sem scroll */
+  padding: 5px;
+
+  /* espaço entre header, título e grid */
+  gap: 10px;
 }
 
 header {
-  display: flex;/* Usa flexbox */
-  align-items: center;/* Alinha verticalmente os itens */
-  justify-content: space-between; /* Espaço entre nome, timer e botão */
-  background-color: rgba(0, 0, 0, 0.7);/* Fundo preto com transparência */
+  display: flex;
+
+  /* alinha itens no centro verticalmente */
+  align-items: center;
+
+  /* separa bem */
+  justify-content: space-between;
+
+  /* largura controlada */
+  width: 90%;
+  max-width: 700px;
+
+  /* espaço interno pra ficar confortável */
+  padding: 15px 20px;
+
+  /* borda arredondada */
+  border-radius: 12px;
+
+  /* fundo escuro transparente */
+  background: rgba(0, 0, 0, 0.75);
+
+  /* borda neon estilo game */
+  border: 2px solid #00ffcc;
+
+  /* cor do texto */
   color: #00ffcc;
-  font-size: 0.8em;
-  width: 80%; /* Ocupa toda largura disponível */
-  max-width: 600px;/* Limita largura máxima */
-  padding: 20px; /* Espaçamento interno */
-  margin-bottom: 20px; /* Espaço abaixo do header */
-  border-radius: 8px; /* Bordas arredondadas */
-  border: 2px solid #00ffcc;/* Borda neon */
+
+  /* fonte menorzinha pra não pesar */
+  font-size: 0.85em;
+
+  /* glow leve */
+  box-shadow: 0 0 15px rgba(0,255,204,0.3);
 }
+
+
+/* =========================
+    GRID DO JOGO
+   ========================= */
 
 .grid {
-  display: grid;/* Ativa CSS Grid (ESSENCIAL para organizar as cartas) */
-  grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
-  gap: 15px;/* Espaço entre as cartas */
-  width: 80%; /* Ocupa toda largura disponível */
-  max-width: 400px;/* Limita o tamanho do tabuleiro */
+  display: grid;
+
+  /* 4 colunas iguais */
+  grid-template-columns: repeat(4, 1fr);
+
+  /* espaço entre as cartas */
+  gap: 50px;
+
+  /* largura responsiva */
+  width: 90%;
+  max-width: 500px;
+  margin-top: 10px;
+  /* pra caber tudo na tela */
+  height: 65vh;
 }
 
-/* ===== CARTA ===== */
+/* =========================
+    CARTAS
+   ========================= */
+
 .card {
-  aspect-ratio: 3/4; /* Mantém proporção da carta (altura/largura) */
-  width: 100%;
-  /* Ocupa toda a célula do grid */
-  border-radius: 8px; /* Bordas arredondadas */
-  position: relative; /* Necessário para posicionar as faces dentro */
-  transition: all 400ms ease;/* Animação suave */
+  aspect-ratio: 3/4; /* mantém proporção padrão das cartas */
+  border-radius: 10px;
+  /* necessário pro efeito de virar */
+  position: relative;
   transform-style: preserve-3d;
-/* Permite efeito 3D (ESSENCIAL pro flip) */
+
+  /* animação suave */
+  transition: transform 400ms ease;
+
   cursor: pointer;
-/* Mostra que é clicável */
+
+  /* glow leve */
+  box-shadow: 0 0 8px rgba(0,255,204,0.2);
+
+  /* ocupa toda célula do grid */
+  width: 100%;
+  height: 100%;
 }
 
-/* ===== HOVER ===== */
 .card:hover {
   transform: scale(1.05);
-  /* Aumenta levemente ao passar o mouse */
 }
 
-/* ===== FACE (frente e verso) ===== */
+
+/* =========================
+    FACES DA CARTA
+   ========================= */
+
 .face {
-  width: 100%; /* Ocupa toda largura */
-  height: 100%; /* Ocupa toda altura */
- position: absolute;/* Fica sobreposta dentro da carta */
-  background-size: cover;/* Faz a imagem cobrir toda a área */
-  background-position: center;  /* Centraliza a imagem */
-  border: 3px solid #00ffcc; /* Borda neon */
-  border-radius: 8px;/* Bordas arredondadas */
- transition: all 400ms ease;/* Animação suave */
- box-shadow: 0 0 10px #00ffcc;/* Glow neon */
+  width: 100%;
+  height: 100%;
+
+  /* fica uma em cima da outra */
+  position: absolute;
+
+  /* imagem ocupa tudo */
+  background-size: cover;
+  background-position: center;
+
+  /* borda neon */
+  border: 3px solid #00ffcc;
+  border-radius: 8px;
+
+  /* animação suave */
+  transition: all 400ms ease;
+
+  /* brilho */
+  box-shadow: 0 0 10px #00ffcc;
 }
 
-/* ===== FRENTE DA CARTA ===== */
+/* =========================
+    FRENTE (lado escondido)
+   ========================= */
+
 .front {
+  /* começa virada */
   transform: rotateY(180deg);
-  /* Começa virada (escondida) */
 }
 
-/* ===== VERSO DA CARTA ===== */
+/* =========================
+   VERSO (lado  inicial)
+   ========================= */
+
 .back {
-  background-image: url('../../img/cards/card-bk.png');/* Imagem padrão do verso */
-  backface-visibility: hidden;/* Esconde o lado de trás quando gira (ESSENCIAL pro flip) */
+  /* imagem padrão do verso */
+  background-image: url('../../img/cards/card-bk.png');
+
+  /* ESSENCIAL: esconde quando gira */
+  backface-visibility: hidden;
 }
 
-/* ===== QUANDO A CARTA VIRA ===== */
+/* =========================
+   CARTA VIRADA
+   ========================= */
+
 .reveal-card {
+  /* efeito flip */
   transform: rotateY(180deg);
-  /* Gira a carta (efeito flip) */
 }
 
-/* ===== CARTA DESATIVADA (ACERTOU) ===== */
+/* =========================
+   CARTA ACERTADA
+   ========================= */
+
 .disabled-card {
+  /* tira cor pra indicar que já foi usada */
   filter: grayscale(100%);
-  /* Remove cor (fica cinza) */
 
+  /* deixa mais apagada */
   opacity: 0.5;
-  /* Deixa meio transparente */
 }
 
-/* ===== BOTÃO RESET ===== */
+
+/* =========================
+    RESET
+   ========================= */
+
 .reset {
+  /* transparente pra ficar estiloso */
   background: transparent;
-  /* Fundo transparente */
 
+  /* cor neon */
   color: #00ffcc;
-  /* Texto neon */
 
+  /* borda combinando */
   border: 1px solid #00ffcc;
-  /* Borda neon */
 
   padding: 5px 10px;
-  /* Espaçamento interno */
 
   cursor: pointer;
-  /* Muda cursor para mãozinha */
 }
 
-/* ===== HOVER DO BOTÃO ===== */
+/* efeito ao passar o mouse */
 .reset:hover {
   background: #00ffcc;
-  /* Fundo neon ao passar o mouse */
-
   color: black;
-  /* Texto fica preto */
 }
 
 .titulo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* alinhei logo + título no centro */
-  margin-bottom: 20px;
-  /* espaço abaixo */
+
+  gap: 5px;
+  margin: 10px 0;
 }
 
-/* LOGO */
-img {
-  width: 180px;
-  /* defini um tamanho padrão pras imagens */
+
+/* logo */
+.titulo img {
+  width: 140px;
+
+  /* glow na imagem */
+  filter: drop-shadow(0 0 10px #00ffcc);
 }
 
-/* TÍTULO */
+
+/* texto principal */
 .titulo h1 {
   color: #b2df28;
-  /* verde estilo Rick and Morty */
 
-  font-size: 1.5em;
+  font-size: 1.3em;
 
   letter-spacing: 2px;
-  /* dei um espacinho entre letras */
 
+  /* brilho no texto */
   text-shadow: 0 0 10px #00ffcc;
-  /* glow no texto */
+
+  margin: 0;
 }
 
-/* SUBTÍTULO */
+
+/* subtítulo */
 .subtitle {
   color: #00ffcc;
-  /* azul neon */
-
-  font-size: 0.6em;
-  /* menorzinho pra não roubar atenção */
-
-  margin-top: 10px;
+  font-size: 0.7em;
+  margin: 0;
 }
