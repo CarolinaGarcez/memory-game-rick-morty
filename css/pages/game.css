@@ -113,7 +113,8 @@ header {
   transform-style: preserve-3d;
 
   /* animação suave */
-  transition: transform 400ms ease;
+ transition: transform .3s ease;
+  will-change: transform;
 
   cursor: pointer;
 
@@ -123,10 +124,12 @@ header {
   /* ocupa toda célula do grid */
   width: 100%;
   height: 100%;
+
+   contain: layout paint; /* otimização de renderização */
 }
 
 .card:hover {
-  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 
@@ -135,25 +138,27 @@ header {
    ========================= */
 
 .face {
+
   width: 100%;
   height: 100%;
 
-  /* fica uma em cima da outra */
   position: absolute;
 
-  /* imagem ocupa tudo */
   background-size: cover;
   background-position: center;
 
-  /* borda neon */
   border: 3px solid #00ffcc;
   border-radius: 8px;
 
-  /* animação suave */
-  transition: all 400ms ease;
+  /* REMOVE O ALL */
+  transition: transform .3s ease;
 
-  /* brilho */
-  box-shadow: 0 0 10px #00ffcc;
+  /* OTIMIZAÇÃO GPU */
+  backface-visibility: hidden;
+  will-change: transform;
+
+  /* SHADOW MAIS LEVE */
+  box-shadow: 0 0 5px rgba(0,255,204,.5);
 }
 
 /* =========================
