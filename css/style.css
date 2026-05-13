@@ -1,0 +1,23 @@
+/* =========================================================
+   IMPORTAÇÃO DOS ARQUIVOS CSS
+========================================================= */
+
+/* ===== BASE ===== */
+
+@import url('./base/padrao.css');
+
+
+
+/* ===== LAYOUT ===== */
+
+@import url('./componentes/footer.css');
+@import url('./pages/game.css');
+@import url('./pages/index.css');
+
+
+
+
+/* ===== RESPONSIVIDADE ===== */
+
+@import url('./responsive/responsive.css');
+

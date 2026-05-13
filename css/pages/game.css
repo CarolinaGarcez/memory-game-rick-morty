@@ -6,8 +6,8 @@ body {
   min-height: 100vh;/* garante que ocupa a tela inteira */
   
   background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
-    url('../../img/game/capa-game.png'); /* fundo com imagem + camada escura por cima pra dar contraste */
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9));
+  
 
   /* faz a imagem cobrir toda a tela */
   background-size: cover;
